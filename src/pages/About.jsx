@@ -4,34 +4,34 @@ import '../styles/about.css'
 
 const values = [
   { icon: '✦', title: 'Prestige', text: 'We curate experiences that reflect the status and ambition of our guests at every touchpoint.' },
-  { icon: '⬡', title: 'Integrity', text: 'Transparent, honest, and authentic — we stand by our commitment to genuine quality.' },
+  { icon: '⬡', title: 'Integrity', text: 'Transparent, honest, and authentic, we stand by our commitment to genuine quality.' },
   { icon: '◈', title: 'Excellence', text: 'From the venue selection to the last pour, we settle for nothing less than extraordinary.' },
   { icon: '❋', title: 'Community', text: 'Building a network of impact-driven individuals who elevate one another beyond the room.' },
 ]
 
 const team = [
   {
-    name: 'Damilola Adesanya',
+    name: 'Innocent',
     role: 'Founder & Creative Director',
     bio: 'Serial entrepreneur and culture architect with a passion for building spaces that matter. Lagos born, globally inspired.',
-    image: 'https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=700&q=80',
+    image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=700&q=80',
   },
   {
-    name: 'Ifeoma Chukwu',
+    name: 'Innocent',
     role: 'Head of Experiences',
     bio: 'A decade of event curation across West Africa. She ensures every Thirsty Thursday feels like the first and best time.',
     image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=700&q=80',
   },
   {
-    name: 'Kayode Balogun',
+    name: 'Innocent',
     role: 'Brand & Partnerships Director',
     bio: 'Former advertising executive turned nightlife strategist. The mind behind Thirsty Thursday\'s iconic brand presence.',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=80',
+    image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=700&q=80',
   },
 ]
 
 const features = [
-  { icon: '🥂', title: 'Premium Open Bar', text: 'Carefully selected spirits, wines, and cocktails — crafted by Lagos\' finest mixologists.' },
+  { icon: '🥂', title: 'Premium Open Bar', text: 'Carefully selected spirits, wines, and cocktails crafted by Lagos\' finest mixologists.' },
   { icon: '🎵', title: 'Curated Soundscapes', text: 'Live sets and DJ performances selected to set the perfect ambient tone for the evening.' },
   { icon: '🤝', title: 'Structured Networking', text: 'Guided conversation moments and introductions to meaningful connections in your field.' },
   { icon: '🍽️', title: 'Gourmet Canapés', text: 'An evolving menu of fine bites and signature dishes from acclaimed Lagos chefs.' },
@@ -95,7 +95,7 @@ export default function About() {
                   specifically for people who've achieved something worth celebrating?
                 </p>
                 <p>
-                  The existing nightlife scene was vibrant — but rarely refined. Loud venues, unvetted
+                  The existing nightlife scene was vibrant, but rarely refined. Loud venues, unvetted
                   crowds, and an atmosphere that prioritised volume over value. They decided to change that.
                 </p>
                 <p>
@@ -104,7 +104,7 @@ export default function About() {
                   broader Lagos business community. By the third edition, there was a waiting list.
                 </p>
                 <p>
-                  Three years later, it has grown into Lagos' most recognised monthly premium gathering —
+                  Three years later, it has grown into Lagos' most recognised monthly premium gathering 
                   a brand that stands for class, connection, and the celebration of success.
                 </p>
               </div>
@@ -138,7 +138,7 @@ export default function About() {
               <h3 className="mission__card-title">Our Mission</h3>
               <p className="mission__card-text">
                 To create a monthly premium nightlife experience in Lagos that genuinely
-                reflects the lifestyle, values, and ambitions of accomplished individuals —
+                reflects the lifestyle, values, and ambitions of accomplished individuals, 
                 offering an environment where class is the baseline and connection is the reward.
                 We curate every detail so our guests can simply show up and belong.
               </p>
@@ -148,7 +148,7 @@ export default function About() {
               <h3 className="mission__card-title">Our Vision</h3>
               <p className="mission__card-text">
                 To build Thirsty Thursday into one of West Africa's most recognisable premium
-                lifestyle brands — a name synonymous with sophistication, social prestige, and
+                lifestyle brands, a name synonymous with sophistication, social prestige, and
                 meaningful connection. We see a future where every major Nigerian city has its
                 own Thirsty Thursday chapter, united by one uncompromising standard of excellence.
               </p>

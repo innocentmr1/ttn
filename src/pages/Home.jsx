@@ -14,7 +14,7 @@ const pillars = [
     number: '01',
     icon: '✦',
     title: 'Class',
-    desc: 'An uncompromising standard of elegance in every detail — from the venue dress code to the curated playlist.',
+    desc: 'An uncompromising standard of elegance in every detail, from the venue dress code to the curated playlist.',
     image: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=900&q=80',
   },
   {
@@ -35,22 +35,22 @@ const pillars = [
 
 const testimonials = [
   {
-    text: "Thirsty Thursday isn't just an event — it's a room where the right people happen to be in the same place at the right time. I've closed two deals at these gatherings.",
-    name: 'Emeka Okonkwo',
+    text: "Thirsty Thursday isn't just an event  it's a room where the right people happen to be in the same place at the right time. I've closed two deals at these gatherings.",
+    name: 'Innocent',
     role: 'CEO, Pinnacle Capital Lagos',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80',
     stars: 5,
   },
   {
     text: "As someone who travels frequently, I always make sure I'm in Lagos on the last Thursday of the month. The atmosphere is unmatched — sophisticated without being stiff.",
-    name: 'Adaeze Nwosu',
+    name: 'Kemi',
     role: 'Creative Director, Brand Studio NG',
     avatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=100&q=80',
     stars: 5,
   },
   {
     text: "The calibre of people in that room is remarkable. It's become my favourite networking event in the city — effortless, elegant, and genuinely inspiring.",
-    name: 'Tunde Fashola',
+    name: 'Ola vinyl',
     role: 'Founder, TechBridge Africa',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80',
     stars: 5,
@@ -124,7 +124,7 @@ export default function Home() {
           </h1>
           <p className="hero__desc">
             A carefully curated monthly gathering for accomplished professionals, entrepreneurs,
-            celebrities, and tastemakers — where class meets connection and success is celebrated
+            celebrities, and tastemakers, where class meets connection and success is celebrated
             in style.
           </p>
           <div className="hero__actions">
@@ -189,7 +189,7 @@ export default function Home() {
                 could breathe, connect, and feel exactly where they belong."
               </blockquote>
               <p className="about-snippet__text">
-                Thirsty Thursday was born from a simple observation — Lagos has countless nightlife
+                Thirsty Thursday was born from a simple observation, Lagos has countless nightlife
                 options, but very few true sanctuaries for accomplished individuals who crave
                 sophistication alongside their social life.
               </p>

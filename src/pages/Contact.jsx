@@ -105,7 +105,7 @@ export default function Contact() {
               <div className="gold-divider" />
               <p className="contact-info__text">
                 Whether you're looking to attend an upcoming event, explore partnership opportunities,
-                or simply want to learn more about what we do — our team is here for you.
+                or simply want to learn more about what we do. our team is here for you.
               </p>
 
               <div className="contact-info__items">

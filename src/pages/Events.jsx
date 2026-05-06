@@ -125,7 +125,7 @@ const pastEvents = [
 
 const steps = [
   { n: '01', title: 'Browse Events', text: 'Check our upcoming events and choose the edition that works for you.' },
-  { n: '02', title: 'Select Package', text: 'Pick a ticket tier that suits your preference — Classic, VIP, or Table.' },
+  { n: '02', title: 'Select Package', text: 'Pick a ticket tier that suits your preference  Classic, VIP, or Table.' },
   { n: '03', title: 'Complete Payment', text: 'Secure your spot with a quick and seamless payment process.' },
   { n: '04', title: 'Show Up in Style', text: 'Receive your e-ticket, dress to impress, and enjoy the experience.' },
 ]
