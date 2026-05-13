@@ -171,6 +171,17 @@
   display: block;
 }
 
+.hero__brand-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  animation: slideInLeft 0.85s ease both 0.4s;
+}
+
 /* ---- Stats strip ---- */
 .stats {
   background: var(--dark-2);

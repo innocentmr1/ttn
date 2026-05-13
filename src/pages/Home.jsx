@@ -153,6 +153,7 @@ export default function Home() {
               <img src={transparentLogo} alt="Thirsty Thursday Naija" className="hero__logo" />
             </div>
           )}
+          <p className="hero__brand-name fade-up">Thirsty Thursday Naija</p>
           <h1 className="hero__title">
             Where Naija's biggest<br /><em>achievers gather.</em>
           </h1>
