@@ -186,7 +186,7 @@ export default function Home() {
       <section className="stats">
         <div className="container">
           <div className="stats__planners fade-up">
-            <span className="stats__powered-by">Planned by</span>
+            <span className="stats__powered-by">Powered by </span>
             <div className="stats__planners-logos">
               <div className="stats__planner">
                 <span className="stats__vinyl-line" />
