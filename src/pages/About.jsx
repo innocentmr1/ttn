@@ -20,7 +20,7 @@ const pillars = [
   { icon: '✦', title: 'Class', text: 'An atmosphere built on taste, presence, and standards that speak for themselves.' },
   { icon: '🤝', title: 'Connection', text: 'Meaningful conversations that turn into opportunities and relationships that last beyond the night.' },
   { icon: '🥂', title: 'Indulgence', text: 'Premium hospitality, luxury bottle experiences, and curated moments worth celebrating.' },
-  { icon: '👑', title: 'Social Prestige', text: 'A room that reflects your lifestyle — surrounded by high-level professionals, entrepreneurs, and tastemakers.' },
+  { icon: '👑', title: 'Social Prestige', text: 'A room that reflects your lifestyle  surrounded by high-level professionals, entrepreneurs, and tastemakers.' },
 ]
 
 export default function About() {
@@ -49,7 +49,8 @@ export default function About() {
             <div className="story__text fade-up">
               <span className="section-tag">Who We Are</span>
               <h2 className="section-title" style={{ marginBottom: '28px' }}>
-                Built around what<br /><em>matters most.</em>
+                Built around what<br /><em>matters.</em>
+                
               </h2>
               <div className="gold-divider" style={{ marginBottom: '32px' }} />
               <p>
@@ -61,8 +62,9 @@ export default function About() {
                 Thirsty Thursday is built around <strong>class, connection, indulgence,
                 and social prestige.</strong>
               </p>
+              <p><strong>The concept is simple but powerful:</strong></p>
               <p>
-                The concept is simple but powerful: create a carefully curated monthly gathering
+                Create a carefully curated monthly gathering
                 for accomplished individuals who want to unwind, network, and celebrate success
                 in an environment that reflects their lifestyle and status.
               </p>
@@ -123,7 +125,7 @@ export default function About() {
               <span className="mission__card-icon">🏙️</span>
               <h3 className="mission__card-title">Lagos First</h3>
               <p className="mission__card-text">
-                We're starting in Lagos — Nigeria's commercial and cultural capital — where ambition,
+                We're starting in Lagos Nigeria's commercial and cultural capital where ambition,
                 taste, and nightlife collide at the highest level. Thirsty Thursday is built for
                 this city and the people who drive it.
               </p>
@@ -133,7 +135,7 @@ export default function About() {
               <h3 className="mission__card-title">The Bigger Vision</h3>
               <p className="mission__card-text">
                 Our goal is to grow Thirsty Thursday into one of Africa's most recognisable premium
-                nightlife brands — a name synonymous with quality, exclusivity, and the very best
+                nightlife brands  a name synonymous with quality, exclusivity, and the very best
                 of what a night out should feel like.
               </p>
             </div>
