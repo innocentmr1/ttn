@@ -64,7 +64,11 @@
 .hero__content {
   position: relative;
   z-index: 2;
-  padding-top: 80px;
+  padding-top: 92px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .hero__eyebrow {
@@ -161,7 +165,8 @@
 
 /* Hero logo */
 .hero__logo-wrap {
-  margin-bottom: 28px;
+  margin-bottom: 16px;
+  animation: fadeIn 0.8s ease both 0.1s;
 }
 
 .hero__logo {
@@ -169,17 +174,75 @@
   width: auto;
   object-fit: contain;
   display: block;
+  margin: 0 auto;
 }
 
-.hero__brand-name {
+/* ---- Thirsty Thursday Naija stacked name ---- */
+.hero__name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 0.88;
+  margin-bottom: 32px;
+}
+
+.hero__name-word {
   font-family: var(--font-display);
-  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-weight: 900;
   text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 16px;
-  animation: slideInLeft 0.85s ease both 0.4s;
+  display: block;
+}
+
+/* THIRSTY: white → bright gold */
+.hero__name-word--1 {
+  font-size: clamp(1.6rem, 3.5vw, 3rem);
+  background: linear-gradient(135deg, #ffffff 0%, #fff5cc 45%, #ffd700 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.02em;
+  animation: heroSlam 0.7s cubic-bezier(0.16, 1, 0.3, 1) both 0.3s;
+}
+
+/* THURSDAY: flowing orange-amber shimmer, italic */
+.hero__name-word--2 {
+  font-size: clamp(1.6rem, 3.5vw, 3rem);
+  background: linear-gradient(
+    105deg,
+    #b8860b 0%, #ffd700 22%, #ff8c00 44%, #ffd700 66%, #b8860b 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  filter: drop-shadow(0 0 20px rgba(255, 160, 0, 0.5));
+  animation:
+    heroSlam 0.7s cubic-bezier(0.16, 1, 0.3, 1) both 0.48s,
+    ambFlow 3s ease-in-out infinite 1.4s;
+}
+
+/* NAIJA: fiery red-crimson gradient */
+.hero__name-word--3 {
+  font-size: clamp(0.9rem, 2vw, 1.7rem);
+  background: linear-gradient(135deg, #ff6b35 0%, #c0392b 40%, #8b0000 65%, #ff4500 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.45em;
+  margin-top: 8px;
+  animation: heroSlam 0.7s cubic-bezier(0.16, 1, 0.3, 1) both 0.66s;
+}
+
+@keyframes heroSlam {
+  from { opacity: 0; transform: translateY(60px) scaleY(1.12); filter: blur(6px); }
+  to   { opacity: 1; transform: translateY(0)    scaleY(1);    filter: blur(0);  }
+}
+
+@keyframes ambFlow {
+  0%, 100% { background-position: 0% center; }
+  50%       { background-position: 100% center; }
 }
 
 /* ---- Stats strip ---- */
