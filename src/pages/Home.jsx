@@ -298,15 +298,15 @@ export default function Home() {
                   className="upcoming__image"
                 />
                 <div className="upcoming__date-badge">
-                  <span className="upcoming__date-day">29</span>
-                  <span className="upcoming__date-month">May</span>
+                  <span className="upcoming__date-day">4</span>
+                  <span className="upcoming__date-month">Jun</span>
                 </div>
               </div>
             </div>
             <div className="fade-up" style={{ transitionDelay: '0.2s' }}>
               <span className="section-tag">Next Edition</span>
               <h2 className="section-title">
-                Thirsty Thursday<br /><em>May Edition</em>
+                Thirsty Thursday<br /><em>Lagos Pre Launch</em>
               </h2>
               <div className="gold-divider" />
               <div className="upcoming__meta">
@@ -314,7 +314,7 @@ export default function Home() {
                   <span className="upcoming__meta-icon">📅</span>
                   <div>
                     <p className="upcoming__meta-label">Date</p>
-                    <p className="upcoming__meta-value">Thursday, 29th May 2025</p>
+                    <p className="upcoming__meta-value">Thursday, 4th June 2025</p>
                   </div>
                 </div>
                 <div className="upcoming__meta-item">

@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 92px;
   transition: height var(--transition);
 }
 
@@ -41,7 +41,7 @@
 }
 
 .navbar__logo-img {
-  height: 52px;
+  height: 72px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -61,7 +61,7 @@
 }
 
 .navbar__mobile-logo {
-  height: 70px;
+  height: 90px;
   width: auto;
   object-fit: contain;
   display: block;
