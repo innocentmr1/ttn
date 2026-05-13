@@ -177,6 +177,13 @@ export default function Home() {
       ============================================================ */}
       <section className="stats">
         <div className="container">
+          <div className="stats__powered fade-up">
+            <span className="stats__powered-by">Powered by</span>
+            <span className="stats__vinyl-line" />
+            <span className="stats__vinyl-name">Vinyl</span>
+            <span className="stats__vinyl-line" />
+            <span className="stats__powered-tag">#lovemusic</span>
+          </div>
           <div className="stats__grid">
             {stats.map(({ number, label }) => (
               <div key={label} className="stats__item fade-up">
@@ -184,13 +191,6 @@ export default function Home() {
                 <span className="stats__label">{label}</span>
               </div>
             ))}
-          </div>
-          <div className="stats__powered fade-up">
-            <span className="stats__powered-by">Powered by</span>
-            <span className="stats__vinyl-line" />
-            <span className="stats__vinyl-name">Vinyl</span>
-            <span className="stats__vinyl-line" />
-            <span className="stats__powered-tag">#lovemusic</span>
           </div>
         </div>
       </section>
