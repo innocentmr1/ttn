@@ -212,10 +212,10 @@ export default function Home() {
                 alt="Premium cocktails"
                 className="about-snippet__img-secondary"
               />
-              <div className="about-snippet__badge">
+              {/* <div className="about-snippet__badge">
                 <span className="about-snippet__badge-number">2021</span>
                 <span className="about-snippet__badge-text">Est. Lagos</span>
-              </div>
+              </div> */}
             </div>
 
             <div className="fade-up" style={{ transitionDelay: '0.2s' }}>
