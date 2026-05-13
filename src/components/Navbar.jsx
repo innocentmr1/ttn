@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import '../styles/navbar.css'
 import logoSrc from '../assets/logo.jpeg'
+import ReserveModal from './ReserveModal'
 
 /* Strip white / near-white pixels via canvas → transparent PNG */
 function useTransparentImage(src) {
@@ -41,6 +42,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled]   = useState(false)
   const [menuOpen, setMenuOpen]   = useState(false)
+  const [showModal, setShowModal] = useState(false)
   const transparentLogo           = useTransparentImage(logoSrc)
 
   useEffect(() => {
@@ -82,9 +84,9 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <Link to="/events" className="btn btn-primary navbar__cta">
+          <button className="btn btn-primary navbar__cta" onClick={() => setShowModal(true)}>
             Reserve a Table
-          </Link>
+          </button>
 
           <button
             className={`navbar__hamburger${menuOpen ? ' open' : ''}`}
@@ -113,10 +115,12 @@ export default function Navbar() {
           </NavLink>
         ))}
         <div className="navbar__mobile-divider" />
-        <Link to="/events" className="btn btn-primary navbar__mobile-cta" onClick={closeMenu}>
+        <button className="btn btn-primary navbar__mobile-cta" onClick={() => { closeMenu(); setShowModal(true) }}>
           Reserve a Table
-        </Link>
+        </button>
       </div>
+
+      {showModal && <ReserveModal onClose={() => setShowModal(false)} />}
     </>
   )
 }

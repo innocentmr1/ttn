@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/home.css'
+import ReserveModal from '../components/ReserveModal'
 
 /* ---- Canvas-based white-background removal ---- */
 function useTransparentImage(src) {
@@ -121,6 +122,7 @@ export default function Home() {
   const pageRef = useScrollAnimation()
   const transparentLogo = useTransparentImage(logoSrc)
   const [openFaq, setOpenFaq] = useState(null)
+  const [showModal, setShowModal] = useState(false)
 
   return (
     <div ref={pageRef}>
@@ -159,7 +161,7 @@ export default function Home() {
             celebrate success proudly, and value meaningful social presence.
           </p>
           <div className="hero__actions">
-            <Link to="/events" className="btn btn-primary">Reserve a Table</Link>
+            <button className="btn btn-primary" onClick={() => setShowModal(true)}>Reserve a Table</button>
             <Link to="/contact" className="btn btn-ghost">Partner With Us</Link>
           </div>
         </div>
@@ -340,7 +342,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="upcoming__actions">
-                <Link to="/events" className="btn btn-primary">Reserve a Spot</Link>
+                <button className="btn btn-primary" onClick={() => setShowModal(true)}>Reserve a Spot</button>
                 <Link to="/events" className="btn btn-outline">View All Events</Link>
               </div>
             </div>
@@ -394,7 +396,7 @@ export default function Home() {
               intimacy and quality of the experience.
             </p>
             <div className="cta-banner__actions">
-              <Link to="/events" className="btn btn-primary">Reserve Your Spot</Link>
+              <button className="btn btn-primary" onClick={() => setShowModal(true)}>Reserve Your Spot</button>
               <Link to="/contact" className="btn btn-ghost">Get in Touch</Link>
             </div>
           </div>
@@ -427,6 +429,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {showModal && <ReserveModal onClose={() => setShowModal(false)} />}
 
     </div>
   )
