@@ -193,33 +193,21 @@
   display: block;
 }
 
-/* THIRSTY: white → bright gold */
+/* THIRSTY THURSDAY: white-to-gold gradient, flowing shimmer */
 .hero__name-word--1 {
-  font-size: clamp(1.6rem, 3.5vw, 3rem);
-  background: linear-gradient(135deg, #ffffff 0%, #fff5cc 45%, #ffd700 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  letter-spacing: -0.02em;
-  animation: heroSlam 0.7s cubic-bezier(0.16, 1, 0.3, 1) both 0.3s;
-}
-
-/* THURSDAY: flowing orange-amber shimmer, italic */
-.hero__name-word--2 {
   font-size: clamp(1.6rem, 3.5vw, 3rem);
   background: linear-gradient(
     105deg,
-    #b8860b 0%, #ffd700 22%, #ff8c00 44%, #ffd700 66%, #b8860b 100%
+    #ffffff 0%, #fff5cc 20%, #ffd700 40%, #ff8c00 60%, #ffd700 80%, #ffffff 100%
   );
   background-size: 220% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-style: italic;
   letter-spacing: -0.02em;
-  filter: drop-shadow(0 0 20px rgba(255, 160, 0, 0.5));
+  filter: drop-shadow(0 0 18px rgba(255, 160, 0, 0.4));
   animation:
-    heroSlam 0.7s cubic-bezier(0.16, 1, 0.3, 1) both 0.48s,
+    heroSlam 0.7s cubic-bezier(0.16, 1, 0.3, 1) both 0.3s,
     ambFlow 3s ease-in-out infinite 1.4s;
 }
 
@@ -231,8 +219,8 @@
   background-clip: text;
   color: transparent;
   letter-spacing: 0.45em;
-  margin-top: 8px;
-  animation: heroSlam 0.7s cubic-bezier(0.16, 1, 0.3, 1) both 0.66s;
+  margin-top: 6px;
+  animation: heroSlam 0.7s cubic-bezier(0.16, 1, 0.3, 1) both 0.5s;
 }
 
 @keyframes heroSlam {

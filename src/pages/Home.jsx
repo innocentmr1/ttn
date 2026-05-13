@@ -148,11 +148,11 @@ export default function Home() {
         </div>
 
         <div className="container hero__content">
-          {transparentLogo && (
+          {/* {transparentLogo && (
             <div className="hero__logo-wrap">
               <img src={transparentLogo} alt="Thirsty Thursday Naija" className="hero__logo" />
             </div>
-          )}
+          )} */}
 
           <div className="hero__name">
             <span className="hero__name-word hero__name-word--1">Thirsty Thursday</span>
