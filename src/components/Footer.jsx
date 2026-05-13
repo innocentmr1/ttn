@@ -118,7 +118,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="footer__bottom">
           <p className="footer__copyright">
-            &copy; 2025 <span>Thirsty Thursday Naija</span>. All rights reserved.
+            &copy; 2026 <span>Thirsty Thursday Naija</span>. All rights reserved.
           </p>
           <div className="footer__bottom-links">
             <a href="#" className="footer__bottom-link">Privacy Policy</a>
