@@ -103,6 +103,7 @@ const faqs = [
 ]
 
 import logoSrc from '../assets/logo.jpeg'
+import bbbSrc from '../assets/bbb.jpeg'
 
 function useScrollAnimation() {
   const ref = useRef(null)
@@ -121,6 +122,7 @@ function useScrollAnimation() {
 export default function Home() {
   const pageRef = useScrollAnimation()
   const transparentLogo = useTransparentImage(logoSrc)
+  const transparentBbb  = useTransparentImage(bbbSrc)
   const [openFaq, setOpenFaq] = useState(null)
   const [showModal, setShowModal] = useState(false)
 
@@ -183,12 +185,22 @@ export default function Home() {
       ============================================================ */}
       <section className="stats">
         <div className="container">
-          <div className="stats__powered fade-up">
-            <span className="stats__powered-by">Powered by</span>
-            <span className="stats__vinyl-line" />
-            <span className="stats__vinyl-name">Vinyl</span>
-            <span className="stats__vinyl-line" />
-            <span className="stats__powered-tag">#lovemusic</span>
+          <div className="stats__planners fade-up">
+            <span className="stats__powered-by">Planned by</span>
+            <div className="stats__planners-logos">
+              <div className="stats__planner">
+                <span className="stats__vinyl-line" />
+                <span className="stats__vinyl-name">Vinyl</span>
+                <span className="stats__vinyl-line" />
+                <span className="stats__powered-tag">#lovemusic</span>
+              </div>
+              <span className="stats__planners-divider" />
+              <div className="stats__planner">
+                {transparentBbb && (
+                  <img src={transparentBbb} alt="BBBUZZ" className="stats__bbb-logo" />
+                )}
+              </div>
+            </div>
           </div>
           <div className="stats__grid">
             {stats.map(({ number, label }) => (

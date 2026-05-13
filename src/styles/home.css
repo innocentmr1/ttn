@@ -291,6 +291,40 @@
   gap: 6px;
 }
 
+.stats__planners {
+  text-align: center;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.stats__planners-logos {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.stats__planner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.stats__planners-divider {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.4), transparent);
+}
+
+.stats__bbb-logo {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
 .stats__powered-by {
   font-size: 0.65rem;
   font-weight: 500;
