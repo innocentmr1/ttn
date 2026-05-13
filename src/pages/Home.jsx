@@ -172,10 +172,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero__scroll" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
+        {/* <div className="hero__scroll" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
           <span className="hero__scroll-text">Scroll</span>
           <span className="hero__scroll-bar" />
-        </div>
+        </div> */}
       </section>
 
       {/* ============================================================
