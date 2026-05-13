@@ -107,7 +107,7 @@
 
 .hero__desc {
   font-size: clamp(1rem, 1.5vw, 1.15rem);
-  color: var(--white-muted);
+  color: var(--white);
   line-height: 1.85;
   max-width: 520px;
   margin-bottom: 44px;
@@ -218,6 +218,48 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--grey);
+}
+
+.stats__powered {
+  text-align: center;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.stats__powered-by {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.stats__vinyl-line {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--white), transparent);
+  display: block;
+}
+
+.stats__vinyl-name {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1;
+}
+
+.stats__powered-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: var(--grey-light);
+  text-transform: lowercase;
 }
 
 /* ---- About snippet ---- */
@@ -760,7 +802,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .stats__item:nth-child(2)::after {
+  .stats__item:nth-child(2)::after,
+  .stats__item:nth-child(4)::after {
     display: none;
   }
 

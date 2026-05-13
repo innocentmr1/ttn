@@ -28,6 +28,13 @@ export default function Footer() {
           <div className="footer__brand">
             <span className="footer__brand-logo">Thirsty Thursday Naija</span>
             <p className="footer__brand-tagline">Indulge with Pride</p>
+            <div className="footer__brand-powered">
+              <span className="footer__powered-by">Powered by</span>
+              <span className="footer__vinyl-line" />
+              <span className="footer__vinyl-name">Vinyl</span>
+              <span className="footer__vinyl-line" />
+              <span className="footer__powered-tag">#lovemusic</span>
+            </div>
             <p className="footer__brand-desc">
               A premium monthly nightlife experience for those who work hard,
               celebrate success proudly, and value meaningful social presence.

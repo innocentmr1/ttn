@@ -33,7 +33,7 @@ function useTransparentImage(src) {
 /* ---- Data ---- */
 const stats = [
   { number: '500+', label: 'Guests Monthly' },
-  { number: '3+',   label: 'Years Running' },
+  { number: '9+',   label: 'Years Running' },
   { number: '36+',  label: 'Events Hosted' },
   { number: '12+',  label: 'Premium Venues' },
 ]
@@ -184,6 +184,13 @@ export default function Home() {
                 <span className="stats__label">{label}</span>
               </div>
             ))}
+          </div>
+          <div className="stats__powered fade-up">
+            <span className="stats__powered-by">Powered by</span>
+            <span className="stats__vinyl-line" />
+            <span className="stats__vinyl-name">Vinyl</span>
+            <span className="stats__vinyl-line" />
+            <span className="stats__powered-tag">#lovemusic</span>
           </div>
         </div>
       </section>
