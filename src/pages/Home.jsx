@@ -329,7 +329,7 @@ export default function Home() {
                   <span className="upcoming__meta-icon">📅</span>
                   <div>
                     <p className="upcoming__meta-label">Date</p>
-                    <p className="upcoming__meta-value">Thursday, 4th June 2026</p>
+                    <p className="upcoming__meta-value">Thursday, 4th of June 2026</p>
                   </div>
                 </div>
                 <div className="upcoming__meta-item">
