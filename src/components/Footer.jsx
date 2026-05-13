@@ -26,11 +26,11 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="footer__brand">
-            <span className="footer__brand-logo">Thirsty Thursday</span>
-            <p className="footer__brand-tagline">Naija &mdash; Lagos</p>
+            <span className="footer__brand-logo">Thirsty Thursday Naija</span>
+            <p className="footer__brand-tagline">Indulge with Pride</p>
             <p className="footer__brand-desc">
-              Lagos' most prestigious monthly gathering for accomplished individuals
-              who celebrate success in an environment that reflects their lifestyle and status.
+              A premium monthly nightlife experience for those who work hard,
+              celebrate success proudly, and value meaningful social presence.
             </p>
             <div className="footer__social">
               <a href="#" className="footer__social-link" aria-label="Instagram">
@@ -73,10 +73,10 @@ export default function Footer() {
             <h4 className="footer__col-title">Find Us</h4>
             <div className="footer__contact-item">
               <span className="footer__contact-icon">📍</span>
-              <div className="footer__contact-info">
+              {/* <div className="footer__contact-info">
                 <span className="footer__contact-label">Venue</span>
                 <span className="footer__contact-value">Rotating Premium Venues<br />Victoria Island, Lagos</span>
-              </div>
+              </div> */}
             </div>
             <div className="footer__contact-item">
               <span className="footer__contact-icon">📅</span>
@@ -89,7 +89,7 @@ export default function Footer() {
               <span className="footer__contact-icon">✉️</span>
               <div className="footer__contact-info">
                 <span className="footer__contact-label">Email</span>
-                <span className="footer__contact-value">hello@thirstythursdaynaija.com</span>
+                <span className="footer__contact-value">info@thirstythursdaynaija.com</span>
               </div>
             </div>
           </div>

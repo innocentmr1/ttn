@@ -9,18 +9,30 @@
 }
 
 :root {
-  --gold: #c9a84c;
-  --gold-light: #e8c96b;
-  --gold-pale: #f5e8b8;
-  --black: #080808;
-  --dark: #111111;
-  --dark-2: #1a1a1a;
-  --dark-3: #242424;
-  --dark-4: #2e2e2e;
-  --white: #f8f8f8;
-  --white-muted: #cccccc;
-  --grey: #888888;
-  --grey-light: #aaaaaa;
+  /* ---- Brand palette (from brand guide) ---- */
+  --cream:          #EFE2DA;
+  --cream-2:        #E0D4C8;
+  --burgundy:       #5D1E21;
+  --burgundy-dark:  #390517;
+  --emerald:        #154230;
+  --emerald-2:      #16302B;
+  --gold:           #A6824A;
+  --gold-light:     #C4A06E;
+  --gold-pale:      #D4C0A4;
+  --text-ink:       #03110D;
+
+  /* ---- Dark background scale ---- */
+  --black:   #070f0c;
+  --dark:    #0e1a16;
+  --dark-2:  #16302B;
+  --dark-3:  #1d3d36;
+  --dark-4:  #264f46;
+
+  /* ---- Surface text on dark ---- */
+  --white:        #EFE2DA;
+  --white-muted:  #C8B8AC;
+  --grey:         #7a706a;
+  --grey-light:   #a89890;
 
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Montserrat', sans-serif;
@@ -30,9 +42,9 @@
   --radius-lg: 12px;
   --transition: 0.35s ease;
 
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-  --shadow-gold: 0 4px 32px rgba(201, 168, 76, 0.25);
-  --glow-gold: 0 0 40px rgba(201, 168, 76, 0.15);
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+  --shadow-gold: 0 4px 32px rgba(166, 130, 74, 0.3);
+  --glow-gold: 0 0 40px rgba(166, 130, 74, 0.18);
 }
 
 html {
@@ -167,13 +179,13 @@ ul {
 
 .btn-primary {
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
-  color: var(--black);
+  color: var(--text-ink);
   box-shadow: var(--shadow-gold);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 40px rgba(201, 168, 76, 0.45);
+  box-shadow: 0 8px 40px rgba(166, 130, 74, 0.5);
   background: linear-gradient(135deg, var(--gold-light), var(--gold));
 }
 

@@ -1,59 +1,87 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/home.css'
 
+/* ---- Canvas-based white-background removal ---- */
+function useTransparentImage(src) {
+  const [processed, setProcessed] = useState(null)
+  useEffect(() => {
+    if (!src) return
+    const img = new window.Image()
+    img.onload = () => {
+      const canvas = document.createElement('canvas')
+      canvas.width = img.width
+      canvas.height = img.height
+      const ctx = canvas.getContext('2d')
+      ctx.drawImage(img, 0, 0)
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+      const d = imageData.data
+      for (let i = 0; i < d.length; i += 4) {
+        if (d[i] > 230 && d[i + 1] > 230 && d[i + 2] > 230) {
+          d[i + 3] = 0
+        }
+      }
+      ctx.putImageData(imageData, 0, 0)
+      setProcessed(canvas.toDataURL('image/png'))
+    }
+    img.src = src
+  }, [src])
+  return processed
+}
+
+/* ---- Data ---- */
 const stats = [
   { number: '500+', label: 'Guests Monthly' },
-  { number: '3+', label: 'Years Running' },
-  { number: '36+', label: 'Events Hosted' },
-  { number: '12+', label: 'Premium Venues' },
+  { number: '3+',   label: 'Years Running' },
+  { number: '36+',  label: 'Events Hosted' },
+  { number: '12+',  label: 'Premium Venues' },
 ]
 
 const pillars = [
   {
     number: '01',
-    icon: '✦',
     title: 'Class',
-    desc: 'An uncompromising standard of elegance in every detail, from the venue dress code to the curated playlist.',
+    desc: 'An atmosphere built on taste, presence, and standards that speak for themselves.',
     image: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=900&q=80',
   },
   {
     number: '02',
-    icon: '⬡',
     title: 'Connection',
-    desc: 'Meaningful encounters between high-achieving professionals, entrepreneurs, and creatives who shape the city.',
+    desc: 'Meaningful conversations that turn into opportunities and relationships that last beyond the night.',
     image: 'https://images.unsplash.com/photo-1529543544282-ea669407fca3?auto=format&fit=crop&w=900&q=80',
   },
   {
     number: '03',
-    icon: '◈',
     title: 'Celebration',
-    desc: 'Every Thursday is a toast to success, ambition, and the audacity to live life at the highest level.',
+    desc: 'A space to unwind, enjoy the moment, and celebrate how far you\'ve come.',
     image: 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=900&q=80',
   },
 ]
 
+const experiences = [
+  { icon: '🍾', title: 'Premium Bottle Experiences', desc: 'Luxury spirits and curated selections served with ceremony.' },
+  { icon: '🎵', title: 'Curated Music & Ambience',   desc: 'Sound design crafted to move you — not overwhelm you.' },
+  { icon: '🤝', title: 'High-Value Social Setting',  desc: 'A room full of people worth knowing. Every single time.' },
+]
+
 const testimonials = [
   {
-    text: "Thirsty Thursday isn't just an event  it's a room where the right people happen to be in the same place at the right time. I've closed two deals at these gatherings.",
-    name: 'Innocent',
+    text: "Thirsty Thursday isn't just an event — it's a room where the right people happen to be in the same place at the right time. I've closed two deals at these gatherings.",
+    name: 'Emeka Okonkwo',
     role: 'CEO, Pinnacle Capital Lagos',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80',
-    stars: 5,
   },
   {
     text: "As someone who travels frequently, I always make sure I'm in Lagos on the last Thursday of the month. The atmosphere is unmatched — sophisticated without being stiff.",
-    name: 'Kemi',
+    name: 'Adaeze Nwosu',
     role: 'Creative Director, Brand Studio NG',
     avatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=100&q=80',
-    stars: 5,
   },
   {
     text: "The calibre of people in that room is remarkable. It's become my favourite networking event in the city — effortless, elegant, and genuinely inspiring.",
-    name: 'Ola vinyl',
+    name: 'Tunde Fashola',
     role: 'Founder, TechBridge Africa',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80',
-    stars: 5,
   },
 ]
 
@@ -65,21 +93,25 @@ const galleryImages = [
   'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=600&q=80',
 ]
 
+const faqs = [
+  { q: 'What is the location?',                       a: 'Location may change for each edition but announcements are made beforehand.' },
+  { q: 'Is attendance open to everyone?',             a: 'Entry is selective to maintain the quality of the experience and overall atmosphere.' },
+  { q: 'What kind of experience should guests expect?', a: 'Premium hospitality, elevated ambience, curated music, luxury bottle experiences, and high-quality social interactions.' },
+  { q: 'How often does Thirsty Thursday happen?',     a: 'Monthly.' },
+  { q: 'How do I reserve a table?',                   a: 'Reservations can be made through our website ahead of each edition.' },
+]
+
+import logoSrc from '../assets/logo.jpeg'
+
 function useScrollAnimation() {
   const ref = useRef(null)
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) e.target.classList.add('visible')
-        })
-      },
-      { threshold: 0.15 }
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
+      { threshold: 0.13 }
     )
     const el = ref.current
-    if (el) {
-      el.querySelectorAll('.fade-up').forEach(el => observer.observe(el))
-    }
+    if (el) el.querySelectorAll('.fade-up').forEach(el => observer.observe(el))
     return () => observer.disconnect()
   }, [])
   return ref
@@ -87,53 +119,48 @@ function useScrollAnimation() {
 
 export default function Home() {
   const pageRef = useScrollAnimation()
+  const transparentLogo = useTransparentImage(logoSrc)
+  const [openFaq, setOpenFaq] = useState(null)
 
   return (
     <div ref={pageRef}>
 
-      {/* ---- HERO ---- */}
+      {/* ============================================================
+          HERO
+      ============================================================ */}
       <section className="hero">
         <div className="hero__bg" />
         <div className="hero__overlay" />
 
         <div className="hero__particles" aria-hidden>
           {Array.from({ length: 18 }).map((_, i) => (
-            <span
-              key={i}
-              className="hero__particle"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                '--duration': `${5 + Math.random() * 6}s`,
-                '--delay': `${Math.random() * 4}s`,
-                width: `${1 + Math.random() * 3}px`,
-                height: `${1 + Math.random() * 3}px`,
-              }}
-            />
+            <span key={i} className="hero__particle" style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              '--duration': `${5 + Math.random() * 6}s`,
+              '--delay': `${Math.random() * 4}s`,
+              width: `${1 + Math.random() * 3}px`,
+              height: `${1 + Math.random() * 3}px`,
+            }} />
           ))}
         </div>
 
         <div className="container hero__content">
-          <div className="hero__eyebrow">
-            <span className="hero__eyebrow-line" />
-            <span className="hero__eyebrow-text">Lagos Premium Nightlife Experience</span>
-          </div>
+          {transparentLogo && (
+            <div className="hero__logo-wrap fade-up">
+              <img src={transparentLogo} alt="Thirsty Thursday Naija" className="hero__logo" />
+            </div>
+          )}
           <h1 className="hero__title">
-            Every Thursday<br />
-            <em>Is a Statement.</em>
+            Where Naija's biggest<br /><em>achievers gather.</em>
           </h1>
           <p className="hero__desc">
-            A carefully curated monthly gathering for accomplished professionals, entrepreneurs,
-            celebrities, and tastemakers, where class meets connection and success is celebrated
-            in style.
+            A premium monthly nightlife experience for those who work hard,
+            celebrate success proudly, and value meaningful social presence.
           </p>
           <div className="hero__actions">
-            <Link to="/events" className="btn btn-primary">
-              Reserve Your Table
-            </Link>
-            <Link to="/about" className="btn btn-ghost">
-              Discover Our Story
-            </Link>
+            <Link to="/events" className="btn btn-primary">Reserve a Table</Link>
+            <Link to="/contact" className="btn btn-ghost">Partner With Us</Link>
           </div>
         </div>
 
@@ -143,7 +170,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---- Stats ---- */}
+      {/* ============================================================
+          STATS
+      ============================================================ */}
       <section className="stats">
         <div className="container">
           <div className="stats__grid">
@@ -157,7 +186,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---- About Snippet ---- */}
+      {/* ============================================================
+          OUR STORY — Section 2
+      ============================================================ */}
       <section className="about-snippet">
         <div className="container">
           <div className="about-snippet__grid">
@@ -178,52 +209,46 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="about-snippet__text-side fade-up" style={{ transitionDelay: '0.2s' }}>
+            <div className="fade-up" style={{ transitionDelay: '0.2s' }}>
               <span className="section-tag">Our Story</span>
               <h2 className="section-title">
                 A New Kind of<br /><em>Thursday Culture</em>
               </h2>
               <div className="gold-divider" />
               <blockquote className="about-snippet__quote">
-                "We didn't want another loud event. We wanted a room where people of substance
-                could breathe, connect, and feel exactly where they belong."
+                "We created Thirsty Thursday for people who take pride in both the work they do
+                and the life they live."
               </blockquote>
               <p className="about-snippet__text">
-                Thirsty Thursday was born from a simple observation, Lagos has countless nightlife
-                options, but very few true sanctuaries for accomplished individuals who crave
-                sophistication alongside their social life.
+                Thirsty Thursday is a premium experience where accomplished people come together
+                to unwind, connect, and celebrate success in an atmosphere that feels elevated,
+                intentional, and effortless.
               </p>
               <p className="about-snippet__text">
-                We built an environment where high-level professionals, entrepreneurs, creatives,
-                and influencers come together monthly to unwind, elevate each other, and celebrate
-                what they've built.
+                We're all about good energy, great company, and experiences that match your ambitions.
               </p>
-              <Link to="/about" className="btn btn-outline">
-                Read Our Full Story
-              </Link>
+              <Link to="/about" className="btn btn-outline">Read Our Full Story</Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ---- Three Pillars ---- */}
+      {/* ============================================================
+          FOUNDATION — Section 3
+      ============================================================ */}
       <section className="pillars">
         <div className="container container--wide">
           <div className="section-header section-header--center fade-up">
             <span className="section-tag">Our Foundation</span>
-            <h2 className="section-title">Built on Three Pillars</h2>
+            <h2 className="section-title">Built around what matters.</h2>
           </div>
           <div className="pillars__grid">
-            {pillars.map(({ number, icon, title, desc, image }) => (
+            {pillars.map(({ number, title, desc, image }) => (
               <div key={title} className="pillar">
-                <div
-                  className="pillar__bg"
-                  style={{ backgroundImage: `url('${image}')` }}
-                />
+                <div className="pillar__bg" style={{ backgroundImage: `url('${image}')` }} />
                 <div className="pillar__overlay" />
                 <span className="pillar__number">{number}</span>
                 <div className="pillar__content">
-                  <span className="pillar__icon">{icon}</span>
                   <h3 className="pillar__title">{title}</h3>
                   <p className="pillar__desc">{desc}</p>
                 </div>
@@ -233,15 +258,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---- Upcoming Event ---- */}
-      <section className="upcoming">
+      {/* ============================================================
+          THE EXPERIENCE — Section 4
+      ============================================================ */}
+      <section className="experience-strip section">
+        <div className="container">
+          <div className="section-header section-header--center fade-up">
+            <span className="section-tag">The Experience</span>
+            <h2 className="section-title">
+              Where success is<br /><em>celebrated in style.</em>
+            </h2>
+            <p className="section-subtitle">
+              Every edition of Thirsty Thursday is made to feel immersive, stylish, and socially magnetic.
+            </p>
+          </div>
+          <div className="experience-strip__grid">
+            {experiences.map(({ icon, title, desc }, i) => (
+              <div key={title} className="experience-strip__card fade-up" style={{ transitionDelay: `${i * 0.12}s` }}>
+                <span className="experience-strip__icon">{icon}</span>
+                <h3 className="experience-strip__title">{title}</h3>
+                <p className="experience-strip__desc">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================
+          NEXT EDITION — Section 5 (leave structure as-is)
+      ============================================================ */}
+      <section className="upcoming section--dark">
         <div className="container">
           <div className="upcoming__grid">
             <div className="fade-up">
               <div className="upcoming__image-wrap">
                 <img
                   src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=900&q=80"
-                  alt="Upcoming Thirsty Thursday"
+                  alt="Upcoming edition"
                   className="upcoming__image"
                 />
                 <div className="upcoming__date-badge">
@@ -250,14 +303,12 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
             <div className="fade-up" style={{ transitionDelay: '0.2s' }}>
               <span className="section-tag">Next Edition</span>
               <h2 className="section-title">
                 Thirsty Thursday<br /><em>May Edition</em>
               </h2>
               <div className="gold-divider" />
-
               <div className="upcoming__meta">
                 <div className="upcoming__meta-item">
                   <span className="upcoming__meta-icon">📅</span>
@@ -277,45 +328,42 @@ export default function Home() {
                   <span className="upcoming__meta-icon">📍</span>
                   <div>
                     <p className="upcoming__meta-label">Venue</p>
-                    <p className="upcoming__meta-value">The Latitude Bar & Lounge, V.I Lagos</p>
+                    <p className="upcoming__meta-value">TBA — Victoria Island, Lagos</p>
                   </div>
                 </div>
                 <div className="upcoming__meta-item">
-                  <span className="upcoming__meta-icon">🎟</span>
+                  <span className="upcoming__meta-icon">👔</span>
                   <div>
                     <p className="upcoming__meta-label">Dress Code</p>
                     <p className="upcoming__meta-value">Smart Elegant / All Black</p>
                   </div>
                 </div>
               </div>
-
               <div className="upcoming__actions">
-                <Link to="/events" className="btn btn-primary">
-                  Reserve a Spot
-                </Link>
-                <Link to="/events" className="btn btn-outline">
-                  View All Events
-                </Link>
+                <Link to="/events" className="btn btn-primary">Reserve a Spot</Link>
+                <Link to="/events" className="btn btn-outline">View All Events</Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ---- Testimonials ---- */}
-      <section className="testimonials">
+      {/* ============================================================
+          GUEST EXPERIENCES — Section 6
+      ============================================================ */}
+      <section className="testimonials section--darker">
         <div className="container">
           <div className="section-header section-header--center fade-up">
             <span className="section-tag">Guest Experiences</span>
             <h2 className="section-title">What Our Guests Say</h2>
             <p className="section-subtitle">
-              Hear from the accomplished individuals who make every Thirsty Thursday extraordinary.
+              Hear what it feels like to be part of Thirsty Thursday.
             </p>
           </div>
           <div className="testimonials__grid">
-            {testimonials.map(({ text, name, role, avatar, stars }) => (
+            {testimonials.map(({ text, name, role, avatar }) => (
               <div key={name} className="testimonial fade-up">
-                <div className="testimonial__stars">{'★'.repeat(stars)}</div>
+                <div className="testimonial__stars">★★★★★</div>
                 <p className="testimonial__text">{text}</p>
                 <div className="testimonial__author">
                   <img src={avatar} alt={name} className="testimonial__avatar" />
@@ -330,12 +378,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---- Gallery Preview ---- */}
-      <section className="gallery-preview">
+      {/* ============================================================
+          VISUAL STORIES — Section 7
+      ============================================================ */}
+      <section className="gallery-preview section">
         <div className="container">
           <div className="section-header section-header--center fade-up">
             <span className="section-tag">Visual Stories</span>
-            <h2 className="section-title">Moments Worth Remembering</h2>
+            <h2 className="section-title">
+              How the Thirsty Thursday<br /><em>night unfolds.</em>
+            </h2>
           </div>
           <div className="gallery-preview__grid fade-up">
             {galleryImages.map((src, i) => (
@@ -348,14 +400,14 @@ export default function Home() {
             ))}
           </div>
           <div className="gallery-preview__cta fade-up">
-            <Link to="/gallery" className="btn btn-outline">
-              View Full Gallery
-            </Link>
+            <Link to="/gallery" className="btn btn-outline">View Full Gallery</Link>
           </div>
         </div>
       </section>
 
-      {/* ---- CTA Banner ---- */}
+      {/* ============================================================
+          READY TO JOIN — Section 8
+      ============================================================ */}
       <section className="cta-banner">
         <div className="cta-banner__bg" />
         <div className="cta-banner__overlay" />
@@ -363,20 +415,43 @@ export default function Home() {
           <div className="cta-banner__content fade-up">
             <span className="cta-banner__tag">Exclusive Access</span>
             <h2 className="cta-banner__title">
-              Ready to Join<br /><em>Lagos' Finest?</em>
+              Ready to be part<br />of <em>the experience?</em>
             </h2>
             <p className="cta-banner__subtitle">
-              Secure your place at the table. Limited spots are available each month to
-              preserve the intimacy and quality of the experience.
+              Come on in. Limited slots are available each month to preserve the
+              intimacy and quality of the experience.
             </p>
             <div className="cta-banner__actions">
-              <Link to="/events" className="btn btn-primary">
-                Reserve Your Spot
-              </Link>
-              <Link to="/contact" className="btn btn-ghost">
-                Get In Touch
-              </Link>
+              <Link to="/events" className="btn btn-primary">Reserve Your Spot</Link>
+              <Link to="/contact" className="btn btn-ghost">Get in Touch</Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================
+          FAQ — Section 9
+      ============================================================ */}
+      <section className="home-faq section--dark">
+        <div className="container">
+          <div className="section-header section-header--center fade-up">
+            <span className="section-tag">FAQ</span>
+            <h2 className="section-title">Quick Answers</h2>
+          </div>
+          <div className="home-faq__list fade-up">
+            {faqs.map(({ q, a }, i) => (
+              <div
+                key={i}
+                className={`home-faq__item${openFaq === i ? ' open' : ''}`}
+                onClick={() => setOpenFaq(v => v === i ? null : i)}
+              >
+                <div className="home-faq__question">
+                  <span>{q}</span>
+                  <span className="home-faq__toggle">{openFaq === i ? '−' : '+'}</span>
+                </div>
+                <p className="home-faq__answer">{a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
