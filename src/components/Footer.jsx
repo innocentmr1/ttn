@@ -82,7 +82,7 @@ export default function Footer() {
               <span className="footer__contact-icon">📅</span>
               <div className="footer__contact-info">
                 <span className="footer__contact-label">Schedule</span>
-                <span className="footer__contact-value">Every Last Thursday<br />of the Month</span>
+                <span className="footer__contact-value">Every First Thursday<br />of the Month</span>
               </div>
             </div>
             <div className="footer__contact-item">
