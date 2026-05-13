@@ -348,35 +348,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============================================================
-          GUEST EXPERIENCES — Section 6
-      ============================================================ */}
-      <section className="testimonials section--darker">
-        <div className="container">
-          <div className="section-header section-header--center fade-up">
-            <span className="section-tag">Guest Experiences</span>
-            <h2 className="section-title">What Our Guests Say</h2>
-            <p className="section-subtitle">
-              Hear what it feels like to be part of Thirsty Thursday.
-            </p>
-          </div>
-          <div className="testimonials__grid">
-            {testimonials.map(({ text, name, role, avatar }) => (
-              <div key={name} className="testimonial fade-up">
-                <div className="testimonial__stars">★★★★★</div>
-                <p className="testimonial__text">{text}</p>
-                <div className="testimonial__author">
-                  <img src={avatar} alt={name} className="testimonial__avatar" />
-                  <div>
-                    <p className="testimonial__name">{name}</p>
-                    <p className="testimonial__role">{role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Guest Experiences — hidden until launch */}
 
       {/* ============================================================
           VISUAL STORIES — Section 7
