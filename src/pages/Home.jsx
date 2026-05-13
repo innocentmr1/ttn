@@ -200,12 +200,9 @@ export default function Home() {
               </div>
             ))}
           </div>
-          {transparentBbb && (
-            <div className="stats__bbb fade-up">
-              <span className="stats__powered-by">Also planned by</span>
-              <img src={transparentBbb} alt="BBBUZZ" className="stats__bbb-logo" />
-            </div>
-          )}
+          <div className="stats__bbb fade-up">
+            <img src={bbbSrc} alt="BBBUZZ" className="stats__bbb-logo" />
+          </div>
         </div>
       </section>
 
