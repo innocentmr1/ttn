@@ -99,7 +99,7 @@ const faqs = [
   { q: 'Is attendance open to everyone?',             a: 'Entry is selective to maintain the quality of the experience and overall atmosphere.' },
   { q: 'What kind of experience should guests expect?', a: 'Premium hospitality, elevated ambience, curated music, luxury bottle experiences, and high-quality social interactions.' },
   { q: 'How often does Thirsty Thursday happen?',     a: 'Monthly.' },
-  { q: 'How do I reserve a table?',                   a: 'Reservations can be made through our website ahead of each edition.' },
+  { q: 'How do I reserve a table?',                   a: 'Reservations can be made via our website ahead of each edition.' },
 ]
 
 import logoSrc from '../assets/logo.jpeg'
@@ -160,7 +160,7 @@ export default function Home() {
           </div>
 
           <h1 className="hero__title">
-            Where Naija's biggest<br /><em>achievers gather.</em>
+            Where Naija's biggest<br /><em>Achievers gather.</em>
           </h1>
           <p className="hero__desc">
             A premium monthly nightlife experience for those who work hard,
@@ -336,7 +336,7 @@ export default function Home() {
                   <span className="upcoming__meta-icon">🕘</span>
                   <div>
                     <p className="upcoming__meta-label">Time</p>
-                    <p className="upcoming__meta-value">9:00 PM — Until Dawn</p>
+                    <p className="upcoming__meta-value">11:00 PM — Until Dawn</p>
                   </div>
                 </div>
                 <div className="upcoming__meta-item">
